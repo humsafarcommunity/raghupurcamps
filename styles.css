@@ -1894,3 +1894,45 @@ body.no-scroll { overflow: hidden; }
 .table-wrap thead th { font-weight: 700; }
 .text-link { text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
 .place-body h3 a { text-decoration: none; }
+
+/* ---------- Mobile usability: touch targets and smoother taps ---------- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 76px; }
+a, button, summary, .btn { -webkit-tap-highlight-color: rgba(242, 152, 81, 0.18); touch-action: manipulation; }
+
+@media (max-width: 960px) {
+  /* 44px minimum touch targets (Apple and Google guidance) */
+  .mobile-toggle { width: 44px; height: 44px; padding: 10px; align-items: center; justify-content: center; }
+  .mobile-toggle span { width: 24px; }
+  .close-drawer { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+  .drawer-link { display: flex; align-items: center; min-height: 48px; padding-top: 0.6rem; padding-bottom: 0.6rem; }
+  .brand-logo { min-height: 44px; display: inline-flex; align-items: center; }
+  .hero-breadcrumbs a { display: inline-block; padding: 0.7rem 0.2rem; }
+  .footer-links a { display: inline-block; padding: 0.7rem 0; min-height: 44px; }
+  .footer-contacts a { display: inline-block; padding: 0.6rem 0; }
+  .text-link { display: inline-block; padding: 0.7rem 0; }
+  .place-body h3 a { display: inline-block; padding: 0.5rem 0; }
+  .prose-section ul.prose-links li, .prose-links li { margin-bottom: 0; }
+  .prose-links a, .prose-section li a { display: inline-block; padding: 0.55rem 0; }
+  .faq-item summary { min-height: 52px; }
+}
+
+@media (max-width: 768px) {
+  /* Inputs at 16px stop iOS Safari zooming the page when a field is focused */
+  .form-control, select.form-control, input.form-control, textarea.form-control { font-size: 16px; min-height: 48px; }
+  .btn, .pill-btn { min-height: 48px; }
+  .prose-section p, .prose-section li { font-size: 1.02rem; line-height: 1.7; }
+  .prose-meta { margin-bottom: 1.2rem; }
+  .prose-section { margin-top: 2rem; }
+  /* Tables scroll sideways inside their own box, with a hint on the edge */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  .table-wrap table { min-width: 0; font-size: 0.9rem; }
+  .table-wrap th, .table-wrap td { padding: 0.6rem 0.5rem; }
+  /* Booking dialog fits small screens and scrolls inside itself */
+  .booking-dialog { width: calc(100% - 1.5rem); max-height: 92vh; overflow-y: auto; margin: auto; }
+}
+
+@media (max-width: 380px) {
+  .hero-title { font-size: 2rem; }
+  .brand-name { font-size: 1rem; }
+  .hero-actions .btn { font-size: 0.95rem; padding-left: 1rem; padding-right: 1rem; }
+}
