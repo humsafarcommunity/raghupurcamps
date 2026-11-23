@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  var WHATSAPP_NUMBER = '917018736861';
+  var WHATSAPP_NUMBER = '917018236861';
 
   var PACKAGES = {
     'serolsar-day': 'Serolsar Lake guided day trek',
